@@ -7,11 +7,11 @@ This project bridges hardware microcontrollers and PC-side data analysis. An **E
 The ESP32's internal flash memory has a limited number of write cycles (**flash wear**) and only a few megabytes of storage. Logging directly to it every few seconds would physically wear out the chip within months. In this pipeline, the microcontroller acts only as a **collector**, and a more powerful machine handles **storage**.
 
 ```
-┌──────────────┐   USB Serial (115200 baud)   ┌────────────────┐   append   ┌──────────────────┐
-│    ESP32     │ ───────────────────────────>│   logger.py    │ ─────────> │ sensor_data.csv  │
-│ (MicroPython)│    "70.42\n" every 2 sec    │  (PC Python 3) │  + timestamp│ (Excel / SQL / ML)│
-└──────────────┘                             └────────────────┘            └──────────────────┘
-   Collector                                      Ingestion                     Storage
+┌──────────────┐   USB Serial (115200 baud)   ┌────────────────┐   append    ┌──────────────────┐
+│    ESP32     │ ───────────────────────────> │   logger.py    │ ─────────>  │ sensor_data.csv  │
+│ (MicroPython)│    "70.42\n" every 2 sec     │  (PC Python 3) │  + timestamp│ (Excel / SQL / ML)│
+└──────────────┘                              └────────────────┘             └──────────────────┘
+   Collector                                      Ingestion                        Storage
 ```
 
 ## Prerequisites
