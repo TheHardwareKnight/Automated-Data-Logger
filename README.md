@@ -8,9 +8,9 @@ The ESP32's internal flash memory has a limited number of write cycles (**flash 
 
 ```
 ┌──────────────┐   USB Serial (115200 baud)   ┌────────────────┐   append   ┌──────────────────┐
-│    ESP32     │ ───────────────────────────▶ │   logger.py    │ ─────────▶ │ sensor_data.csv  │
-│ (MicroPython)│    "70.42\n" every 2 sec      │  (PC Python 3) │  + timestamp│ (Excel / SQL / ML)│
-└──────────────┘                               └────────────────┘            └──────────────────┘
+│    ESP32     │ ───────────────────────────▶│   logger.py    │ ─────────▶ │ sensor_data.csv  │
+│ (MicroPython)│    "70.42\n" every 2 sec    │  (PC Python 3) │  + timestamp│ (Excel / SQL / ML)│
+└──────────────┘                             └────────────────┘            └──────────────────┘
    Collector                                      Ingestion                     Storage
 ```
 
